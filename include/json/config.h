@@ -83,10 +83,13 @@
 // managable and fixes a set of common hard-to-find bugs.
 #if __cplusplus >= 201103L
 # define JSONCPP_OVERRIDE override
+# define JSONCPP_NOEXCEPT noexcept
 #elif defined(_MSC_VER) && _MSC_VER > 1600
 # define JSONCPP_OVERRIDE override
+# define JSONCPP_NOEXCEPT noexcept
 #else
 # define JSONCPP_OVERRIDE
+# define JSONCPP_NOEXCEPT throw()
 #endif
 
 #ifndef JSON_HAS_RVALUE_REFERENCES
